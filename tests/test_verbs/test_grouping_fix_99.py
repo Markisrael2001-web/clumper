@@ -53,3 +53,4 @@ def test_group_by_two_columns_with_multiple_aggregations():
     assert results[("a", "a")] == (30, 2)
     assert results[("a", "b")] == (30, 1)
     assert results[("b", "a")] == (40, 1)
+    
