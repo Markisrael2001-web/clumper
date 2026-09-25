@@ -1,5 +1,6 @@
 from clumper import Clumper
 
+
 def test_group_by_four_columns_with_missing_combination():
     data = [
         {"a": 1, "b": 1, "c": 1, "d": 1, "value": 10},
@@ -25,8 +26,9 @@ def test_group_by_four_columns_with_missing_combination():
     assert totals[(1, 1, 2, 1)] == 30
     assert totals[(2, 1, 1, 1)] == 40
 
-    def test_group_by_two_columns_with_multiple_aggregations():
-        data = [
+
+def test_group_by_two_columns_with_multiple_aggregations():
+    data = [
         {"grp_1": "a", "grp_2": "a", "value": 10},
         {"grp_1": "a", "grp_2": "a", "value": 20},
         {"grp_1": "a", "grp_2": "b", "value": 30},
