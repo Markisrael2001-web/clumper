@@ -12,7 +12,7 @@ def test_group_by_four_columns_with_missing_combination():
     result = (
         Clumper(data)
         .group_by("a", "b", "c", "d")
-        .agg(total=lambda d: sum(row["value"] for row in d))
+        .agg(total=("value", sum))
         .collect()
     )
 
@@ -39,8 +39,8 @@ def test_group_by_two_columns_with_multiple_aggregations():
         Clumper(data)
         .group_by("grp_1", "grp_2")
         .agg(
-            total=lambda d: sum(row["value"] for row in d),
-            count=lambda d: len(d),
+            total=("value", sum),
+            count=("value", len),
         )
         .collect()
     )
